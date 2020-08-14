@@ -1,8 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import 'login.dart';
+import 'package:homescreen/ui/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,10 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         Duration(seconds: 5),
-        () => Navigator.push(
+        () => Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginPage(),
+                builder: (context) => OnBoardingPage(),
               ),
             ));
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:video_player/video_player.dart';
-import 'package:homescreen/ui/widgets.dart';
+// import 'package:homescreen/ui/widgets.dart';
 
 class VideoScreen extends StatefulWidget {
   @override
@@ -23,64 +23,64 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Widget _buildBody() {
-      return SafeArea(
-        bottom: false,
-        left: false,
-        right: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Hero(
-              tag: 0,
-              child: HeroAnimatingSongCard(
-                sermon: "Direction And Guidance",
-                color: Colors.blue,
-                heroAnimation: AlwaysStoppedAnimation(1),
-              ),
-              // This app uses a flightShuttleBuilder to specify the exact widget
-              // to build while the hero transition is mid-flight.
-              //
-              // It could either be specified here or in SongsTab.
-              flightShuttleBuilder: (context, animation, flightDirection,
-                  fromHeroContext, toHeroContext) {
-                return HeroAnimatingSongCard(
-                  sermon: "Direction And Guidance",
-                  color: Colors.blue,
-                  heroAnimation: animation,
-                );
-              },
-            ),
-            Divider(
-              height: 0,
-              color: Colors.grey,
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return Padding(
-                      padding:
-                          const EdgeInsets.only(left: 15, top: 16, bottom: 8),
-                      child: Text(
-                        'You might also like:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    );
-                  }
-                  // Just a bunch of boxes that simulates loading song choices.
-                  return SongPlaceholderTile();
-                },
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    // Widget _buildBody() {
+    //   return SafeArea(
+    //     bottom: false,
+    //     left: false,
+    //     right: false,
+    //     child: Column(
+    //       crossAxisAlignment: CrossAxisAlignment.stretch,
+    //       children: [
+    //         Hero(
+    //           tag: 0,
+    //           child: HeroAnimatingSongCard(
+    //             sermon: "Direction And Guidance",
+    //             color: Colors.blue,
+    //             heroAnimation: AlwaysStoppedAnimation(1),
+    //           ),
+    //           // This app uses a flightShuttleBuilder to specify the exact widget
+    //           // to build while the hero transition is mid-flight.
+    //           //
+    //           // It could either be specified here or in SongsTab.
+    //           flightShuttleBuilder: (context, animation, flightDirection,
+    //               fromHeroContext, toHeroContext) {
+    //             return HeroAnimatingSongCard(
+    //               sermon: "Direction And Guidance",
+    //               color: Colors.blue,
+    //               heroAnimation: animation,
+    //             );
+    //           },
+    //         ),
+    //         Divider(
+    //           height: 0,
+    //           color: Colors.grey,
+    //         ),
+    //         Expanded(
+    //           child: ListView.builder(
+    //             itemCount: 10,
+    //             itemBuilder: (context, index) {
+    //               if (index == 0) {
+    //                 return Padding(
+    //                   padding:
+    //                       const EdgeInsets.only(left: 15, top: 16, bottom: 8),
+    //                   child: Text(
+    //                     'You might also like:',
+    //                     style: TextStyle(
+    //                       fontSize: 16,
+    //                       fontWeight: FontWeight.w500,
+    //                     ),
+    //                   ),
+    //                 );
+    //               }
+    //               // Just a bunch of boxes that simulates loading song choices.
+    //               return SongPlaceholderTile();
+    //             },
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   );
+    // }
 
     return Scaffold(
       backgroundColor: Color(0xff2B2B52),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homescreen/Animations/FadeAnimation.dart';
-import 'package:homescreen/ui/video_player.dart';
+import 'package:homescreen/ui/video_player_2.dart';
 import 'package:homescreen/widgets/auto_size_text.dart';
 
 class VideoHome extends StatefulWidget {
@@ -10,66 +10,66 @@ class VideoHome extends StatefulWidget {
 
 class _VideoHomeState extends State<VideoHome> {
   // bool _isLoading = false;
-  _buildProfileInfo() {
-    return FadeAnimation(
-      1.2,
-      Container(
-        margin: EdgeInsets.only(top: 20.0, left: 20, right: 20, bottom: 20),
-        padding: EdgeInsets.all(20.0),
-        height: 100.0,
-        decoration: BoxDecoration(
-          color: Colors.orangeAccent,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0, 1),
-              spreadRadius: 4,
-              blurRadius: 16.0,
-            ),
-          ],
-        ),
-        child: Row(
-          children: <Widget>[
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 35.0,
-              backgroundImage: AssetImage('images/fire.png'),
-            ),
-            SizedBox(width: 12.0),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    ("Brim Ghana"),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontFamily: 'ExpletusSans',
-                      fontWeight: FontWeight.w600,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    '20 subscribers',
-                    style: TextStyle(
-                      color: Colors.blue[900],
-                      fontSize: 16.0,
-                      fontFamily: 'Righteous',
-                      fontWeight: FontWeight.w600,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+  // _buildProfileInfo() {
+  //   return FadeAnimation(
+  //     1.2,
+  //     Container(
+  //       margin: EdgeInsets.only(top: 20.0, left: 20, right: 20, bottom: 20),
+  //       padding: EdgeInsets.all(20.0),
+  //       height: 100.0,
+  //       decoration: BoxDecoration(
+  //         color: Colors.orangeAccent,
+  //         borderRadius: BorderRadius.circular(20),
+  //         boxShadow: [
+  //           BoxShadow(
+  //             color: Colors.black12,
+  //             offset: Offset(0, 1),
+  //             spreadRadius: 4,
+  //             blurRadius: 16.0,
+  //           ),
+  //         ],
+  //       ),
+  //       child: Row(
+  //         children: <Widget>[
+  //           CircleAvatar(
+  //             backgroundColor: Colors.white,
+  //             radius: 35.0,
+  //             backgroundImage: AssetImage('images/fire.png'),
+  //           ),
+  //           SizedBox(width: 12.0),
+  //           Expanded(
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               crossAxisAlignment: CrossAxisAlignment.start,
+  //               children: <Widget>[
+  //                 Text(
+  //                   ("Brim Ghana"),
+  //                   style: TextStyle(
+  //                     color: Colors.white,
+  //                     fontSize: 20.0,
+  //                     fontFamily: 'ExpletusSans',
+  //                     fontWeight: FontWeight.w600,
+  //                   ),
+  //                   overflow: TextOverflow.ellipsis,
+  //                 ),
+  //                 Text(
+  //                   '20 subscribers',
+  //                   style: TextStyle(
+  //                     color: Colors.blue[900],
+  //                     fontSize: 16.0,
+  //                     fontFamily: 'Righteous',
+  //                     fontWeight: FontWeight.w600,
+  //                   ),
+  //                   overflow: TextOverflow.ellipsis,
+  //                 ),
+  //               ],
+  //             ),
+  //           )
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
 //--original copy
   // _buildVideo(Video video) {
@@ -151,7 +151,7 @@ class _VideoHomeState extends State<VideoHome> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => VideoScreen(),
+          builder: (context) => VideoExample(),
         ),
       ),
       child: FadeAnimation(
@@ -379,7 +379,8 @@ class _VideoHomeState extends State<VideoHome> {
       ),
       body: Column(
         children: <Widget>[
-          _buildProfileInfo(),
+          // _buildProfileInfo(),
+          SizedBox(height: 20),
           Flexible(
             child: Container(
               padding: EdgeInsets.all(10),
@@ -391,7 +392,7 @@ class _VideoHomeState extends State<VideoHome> {
                 ),
               ),
               child: ListView.builder(
-                itemCount: 1 + 10,
+                itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   // if (index == 0) {
                   //   return _buildProfileInfo();

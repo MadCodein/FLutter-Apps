@@ -23,7 +23,10 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 50),
+              SizedBox(
+                  height: (MediaQuery.of(context).size.height -
+                          MediaQuery.of(context).padding.top) *
+                      0.2),
               FadeAnimation(
                 1.1,
                 buildAvatarContainer(),
@@ -152,7 +155,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                   1.5,
                   RichText(
                     text: TextSpan(
-                        text: "New user? ",
+                        text: "New user?",
                         style: TextStyle(
                             color: Color(0xff606470),
                             fontSize: 16,

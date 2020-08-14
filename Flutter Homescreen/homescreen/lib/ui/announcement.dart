@@ -1,14 +1,42 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 // import 'package:flutter_lorem/flutter_lorem.dart';
 
 // // import 'utils.dart';
 // import 'widgets.dart';
 
 class Announcement extends StatelessWidget {
+  final List<Color> colors = <Color>[Colors.red, Colors.blue, Colors.amber];
+  final String _title = 'Annoucement!';
+  final String _brief =
+      'There will be a spiritual exercise at the Favour Land for all members of the church from 27th July to 2nd August, 2020.';
+  final String _detail =
+      '''As part of our yearly program, the entire church will be going through a spiritual exercise through fasting and prayers program at the Favour Land (Restoration Camp, Domeabra). The Church is requesting that at least every member should ask for permission from work for a day or two if possible to spend at the land from morning to evening after which he or she can leave. It is very important. Also on tuesday, there will be a deliverance service. This goes to individuals who have had people sleep with them in their dreams. The Lord is going to deliver us from it. Hallelujah!!!. Let us keep note of all of these and do as instructed. God bless you.''';
+  final String _postDate = 'Posted: 18th July, 2020';
   @override
   Widget build(BuildContext context) {
+    void _showAlertMessage() {
+      var alert = new AlertDialog(
+        title: Text(_title),
+        content: Text(_detail),
+        scrollable: true,
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text("Ok"),
+          )
+        ],
+      );
+
+      showDialog(
+          context: context,
+          builder: (context) {
+            return alert;
+          });
+    }
+
     _buildAnnouncement() {
       return Card(
         elevation: 1.5,
@@ -18,16 +46,19 @@ class Announcement extends StatelessWidget {
         ),
         child: InkWell(
           splashColor: Colors.orange,
-          onTap: () => print("Announcement Item Tapped"),
+          onTap: () => _showAlertMessage(),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.primaries[
+                      math.Random().nextInt(Colors.primaries.length)],
+                  // Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                  //     .withOpacity(1.0),
                   child: Text(
-                    'Half'.substring(0, 1),
+                    _title.substring(0, 1),
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'Righteous',
@@ -40,7 +71,7 @@ class Announcement extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Half Night Service',
+                        _title,
                         style: TextStyle(
                           fontSize: 18,
                           fontFamily: 'ExpletusSans',
@@ -49,13 +80,13 @@ class Announcement extends StatelessWidget {
                       ),
                       Padding(padding: EdgeInsets.only(top: 8)),
                       Text(
-                        'There will  be a half night service, on Friday, 24th July 2020. Kindly take note and prepare yourself for the time ahead.',
+                        _brief,
                         style: TextStyle(fontFamily: 'WorkSans'),
                       ),
                       Container(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          'Posted: 18th July, 2020',
+                          _postDate,
                           textAlign: TextAlign.right,
                           style: TextStyle(fontFamily: 'Acme'),
                         ),

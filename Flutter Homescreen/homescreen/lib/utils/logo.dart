@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Container buildAvatarContainer() {
   return Container(
-    margin: EdgeInsets.only(top: 70),
+    // margin: EdgeInsets.only(top: 70),
     width: 130,
     height: 130,
     decoration: BoxDecoration(

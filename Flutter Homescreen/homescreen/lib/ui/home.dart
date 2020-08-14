@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homescreen/Animations/FadeAnimation.dart';
 import 'package:homescreen/ui/grid.dart';
 import 'package:homescreen/ui/login.dart';
+import 'package:homescreen/ui/story_page_view.dart';
 
 class Home extends StatelessWidget {
   static const _logoutMessage = Text("Are you sure you want to Log Out?");
@@ -50,10 +51,20 @@ class Home extends StatelessWidget {
                             // offset: Offset(8.0, 10.0),
                           ),
                         ]),
-                    child: Image.asset(
-                      'images/fire.png',
-                      width: 200,
-                      height: 200,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StoryPageView(),
+                          ),
+                        );
+                      },
+                      child: Image.asset(
+                        'images/fire.png',
+                        width: 200,
+                        height: 200,
+                      ),
                     ),
                   ),
                 ),
